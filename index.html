@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title></title>
+        <script src="paper-full.js"></script>
+        <script type="text/paperscript" canvas="canvas">
+        // The starting position of the line
+        var position = new Point(100, 100);
+
+        // The amount we will move when one of the keys is pressed:
+        var step = 10;
+
+        var path = new Path();
+        path.strokeColor = 'black';
+        path.add(position);
+
+        function onKeyDown(event) {
+        if(event.key == 'a' && position.x >= 10) {
+            position.x -= step;
+        }
+
+        if(event.key == 'd' && position.x <= 250) {
+            position.x += step;
+        }
+
+        if(event.key == 'w' && position.y >= 10) {
+            position.y -= step;
+        }
+
+        if(event.key == 's' && position.y <= 200) {
+            position.y += step;
+        }
+        path.add(position);
+        }
+
+        </script>
+    </head>
+    <body>
+        <canvas id="canvas" width="300" height="300"></canvas>
+    </body>
+</html>
