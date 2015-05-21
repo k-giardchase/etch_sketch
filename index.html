@@ -1,6 +1,7 @@
 <html>
     <head>
         <title></title>
+        <link href="styles.css" rel="stylesheet">
         <script src="paper-full.js"></script>
         <script type="text/paperscript" canvas="canvas">
         // The starting position of the line
@@ -14,27 +15,32 @@
         path.add(position);
 
         function onKeyDown(event) {
-        if(event.key == 'a' && position.x >= 10) {
-            position.x -= step;
-        }
+            if(event.key == 'a' && position.x >= 10) {
+                position.x -= step;
+            }
 
-        if(event.key == 'd' && position.x <= 250) {
-            position.x += step;
-        }
+            if(event.key == 'd' && position.x <= 290) {
+                position.x += step;
+            }
 
-        if(event.key == 'w' && position.y >= 10) {
-            position.y -= step;
-        }
+            if(event.key == 'w' && position.y >= 10) {
+                position.y -= step;
+            }
 
-        if(event.key == 's' && position.y <= 200) {
-            position.y += step;
-        }
-        path.add(position);
+            if(event.key == 's' && position.y <= 290) {
+                position.y += step;
+            }
+
+            path.add(position);
+
         }
 
         </script>
     </head>
     <body>
-        <canvas id="canvas" width="300" height="300"></canvas>
+        <div id="etch-board">
+            <h1>Etch a Sketch</h1>
+        </div>
+        <canvas id="canvas" width="380" height="300"></canvas>
     </body>
 </html>
