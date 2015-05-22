@@ -2,11 +2,14 @@
     <head>
         <title></title>
         <link href="styles.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
         <script src="paper-full.js"></script>
     </head>
     <body>
+      <div class="container">
+
         <div id="etch-board">
-            <h1 class="title">MAGIC Etch a Sketch SCREEN</h1>
+            <h1>MAGIC <span class="fancy-font">Etch a Sketch</span> SCREEN</h1>
         </div>
         <div id="knob1">
 
@@ -36,7 +39,7 @@
                     position.x -= step;
                 }
 
-                if(event.key == 'd' && position.x <= 290) {
+                if(event.key == 'd' && position.x <= 440) {
                     position.x += step;
                 }
 
@@ -58,4 +61,5 @@
             }
             </script>
     </body>
+  </div>
 </html>
