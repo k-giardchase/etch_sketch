@@ -38,7 +38,7 @@ body {
     width: 450px;
     height: 300px;
     top: 130px;
-    left: 275px;
+    left: 280px;
     background-color: #FFF;
     -moz-box-shadow:    inset 0 0 10px #000000;
     -webkit-box-shadow: inset 0 0 10px #000000;
@@ -48,8 +48,7 @@ body {
 }
 
 #clear {
-    position: relative;
-    left: 225px;
+    margin-left: 100px;
 }
 
 #knob1 {
