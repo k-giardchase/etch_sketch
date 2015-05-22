@@ -1,17 +1,51 @@
 #etch-board {
     background-color: red;
-    width: 500px;
+    width: 600px;
     height: 450px;
-    border-radius: 10%;
+    box-shadow: 0 0 10px #000000;
 
 }
 
 #canvas {
     position: absolute;
+    width: 450px;
+    height: 300px;
     top: 80px;
-    left: 60px;
+    left: 75px;
     background-color: #FFF;
     -moz-box-shadow:    inset 0 0 10px #000000;
-   -webkit-box-shadow: inset 0 0 10px #000000;
-   box-shadow:         inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow:         inset 0 0 10px #000000;
+    border-radius: 10px;
+
+}
+
+#clear {
+    position: relative;
+    left: 225px;
+}
+
+#knob1 {
+    background-color: #FFF;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 390px;
+    left: 25px;
+    border-radius: 30px;
+}
+
+#knob2 {
+    background-color: #FFF;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 390px;
+    left: 525px;
+    border-radius: 30px;
+}
+
+.title {
+    margin-left: 200px;
+    padding-top: 10px;
 }

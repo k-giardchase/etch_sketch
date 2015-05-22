@@ -3,43 +3,59 @@
         <title></title>
         <link href="styles.css" rel="stylesheet">
         <script src="paper-full.js"></script>
-        <script type="text/paperscript" canvas="canvas">
-        // The starting position of the line
-        var position = new Point(100, 100);
-
-        // The amount we will move when one of the keys is pressed:
-        var step = 10;
-
-        var path = new Path();
-        path.strokeColor = 'black';
-        path.add(position);
-
-        function onKeyDown(event) {
-            if(event.key == 'a' && position.x >= 10) {
-                position.x -= step;
-            }
-
-            if(event.key == 'd' && position.x <= 290) {
-                position.x += step;
-            }
-
-            if(event.key == 'w' && position.y >= 10) {
-                position.y -= step;
-            }
-
-            if(event.key == 's' && position.y <= 290) {
-                position.y += step;
-            }
-
-            path.add(position);
-
-        }
-
-        </script>
     </head>
     <body>
         <div id="etch-board">
+            <h1 class="title">MAGIC Etch a Sketch SCREEN</h1>
         </div>
-        <canvas id="canvas" width="380" height="300"></canvas>
+        <div id="knob1">
+
+        </div>
+        <div id="knob2">
+
+        </div>
+        <canvas id="canvas"></canvas>
+            <button id="reset" type="submit">Clear</button>
+            <script type="text/paperscript" canvas="canvas">
+            // The starting position of the line
+            var position = new Point(100, 100);
+
+            // The amount we will move when one of the keys is pressed:
+            var step = 10;
+
+            var path = new Path();
+            path.strokeColor = 'black';
+            path.add(position);
+
+            var canvas = document.getElementById('canvas');
+            var context = canvas.getContext('path');
+
+
+            function onKeyDown(event) {
+                if(event.key == 'a' && position.x >= 10) {
+                    position.x -= step;
+                }
+
+                if(event.key == 'd' && position.x <= 290) {
+                    position.x += step;
+                }
+
+                if(event.key == 'w' && position.y >= 10) {
+                    position.y -= step;
+                }
+
+                if(event.key == 's' && position.y <= 290) {
+                    position.y += step;
+                }
+
+                path.add(position);
+
+                document.getElementById('reset').onclick = function() {
+                    project.clear();
+                    alert('hi');
+                };
+
+            }
+            </script>
     </body>
 </html>
