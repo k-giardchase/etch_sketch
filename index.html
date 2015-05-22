@@ -1,64 +1,95 @@
 <html>
     <head>
         <title></title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
         <link href="styles.css" rel="stylesheet">
         <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
         <script src="paper-full.js"></script>
+        <script type="text/paperscript" canvas="canvas">
+        // The starting position of the line
+        var position = new Point(100, 100);
+
+        // The amount we will move when one of the keys is pressed:
+        var step = 10;
+
+        var path = new Path();
+        path.strokeColor = 'black';
+        path.add(position);
+
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('path');
+
+
+        function onKeyDown(event) {
+            // if(event.key == ('a' && 'w') && position.x >= 10) {
+            //     position.x -= step;
+            //     position.y -= step;
+            // }
+            //
+            // if(event.key == ('w' && 'd') && position.y >= 10) {
+            //     position.y -= step;
+            //     position.x += step;
+            // }
+
+            if(event.key == 'a' && position.x >= 10) {
+                position.x -= step;
+            }
+
+            if(event.key == 'd' && position.x <= 440) {
+                position.x += step;
+            }
+
+            if(event.key == 'w' && position.y >= 10) {
+                position.y -= step;
+            }
+
+            if(event.key == 's' && position.y <= 290) {
+                position.y += step;
+            }
+
+            path.add(position);
+
+            // document.getElementById('reset').onclick = function() {
+            //     project.clear();
+            //     alert('hi');
+            // };
+
+        }
+        </script>
+        <script type="text/paperscript" canvas="knobs">
+            var knob1 = new Path.Circle(new Point(50, 80), 30);
+            knob1.fillColor = '#FFF';
+
+            for (var i = 1; i < 8; i++) {
+            	var radius = 30 - (i * 4);
+            	var path = new Path.Circle(new Point(50, 80), radius);
+            	path.strokeColor = '#d3d3d3';
+            }
+
+            var knob2 = new Path.Circle(new Point(550, 80), 30);
+            knob2.fillColor = '#FFF';
+
+            for (var i = 1; i < 8; i++) {
+            	var radius = 30 - (i * 4);
+            	var path = new Path.Circle(new Point(550, 80), radius);
+            	path.strokeColor = '#d3d3d3';
+            }
+        </script>
     </head>
     <body>
       <div class="container">
-        <button id="clear" type="submit">Clear</button>
         <div id="etch-board">
             <h1>MAGIC <span class="fancy-font">Etch a Sketch</span> SCREEN</h1>
         </div>
-        <div id="knob1">
+        <!-- <div id="knob1">
 
         </div>
         <div id="knob2">
 
-        </div>
+        </div> -->
         <canvas id="canvas"></canvas>
-            <script type="text/paperscript" canvas="canvas">
-            // The starting position of the line
-            var position = new Point(100, 100);
-
-            // The amount we will move when one of the keys is pressed:
-            var step = 10;
-
-            var path = new Path();
-            path.strokeColor = 'black';
-            path.add(position);
-
-            var canvas = document.getElementById('canvas');
-            var context = canvas.getContext('path');
-
-
-            function onKeyDown(event) {
-                if(event.key == 'a' && position.x >= 10) {
-                    position.x -= step;
-                }
-
-                if(event.key == 'd' && position.x <= 440) {
-                    position.x += step;
-                }
-
-                if(event.key == 'w' && position.y >= 10) {
-                    position.y -= step;
-                }
-
-                if(event.key == 's' && position.y <= 290) {
-                    position.y += step;
-                }
-
-                path.add(position);
-
-                document.getElementById('reset').onclick = function() {
-                    project.clear();
-                    alert('hi');
-                };
-
-            }
-            </script>
+        <canvas id="knobs"></canvas>
+        <button id="clear" type="submit" class="btn-lg btn-warning">Shake</button>
     </body>
   </div>
 </html>
