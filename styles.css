@@ -28,9 +28,18 @@ body {
     background-color: red;
     width: 600px;
     height: 450px;
-    box-shadow: 0 0 10px #000000;
     margin-top: 50px;
     border-radius: 10px;
+    box-shadow: 5px 5px 10px #000000;
+    -webkit-box-shadow: 5px 5px 10px #000;
+    -moz-box-shadow: 5px 5px 10px #000;
+}
+
+.gradient {
+    background: -webkit-linear-gradient(left top, #FF0000, #FF3030); /* For Safari 5.1 to 6.0 */
+   background: -o-linear-gradient(bottom right, #FF0000, #FF3030); /* For Opera 11.1 to 12.0 */
+   background: -moz-linear-gradient(bottom right, #FF0000, #FF3030); /* For Firefox 3.6 to 15 */
+   background: linear-gradient(to bottom right, #FF0000, #FF3030); /* Standard syntax (must be last) */
 
 }
 
@@ -55,7 +64,7 @@ body {
     height: 200px;
 }
 
-#clear {
-    margin-left: 100px;
-    margin-top: 20px;
+#shake {
+    position: absolute;
+    left: 320px;
 }
